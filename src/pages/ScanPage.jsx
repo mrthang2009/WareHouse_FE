@@ -71,7 +71,6 @@
 
 // export default ScanPage;
 
-
 import styles from "./stylesPage/ScanPage.module.scss";
 import { useState, useEffect } from "react";
 import QrScanner from "react-qr-scanner";
@@ -124,10 +123,11 @@ const ScanPage = () => {
       <div className={styles.content}>
         <div className={styles.box_left}>
           <QrScanner
+            delay={200}
             onScan={handleScan}
             onError={handleError}
             style={{ width: "500px" }}
-            facingMode={useFrontCamera ? "front " : "rear"} // Chọn chế độ camera dựa trên trạng thái useFrontCamera
+            chooseDeviceId={useFrontCamera ? "front " : "rear"} // Chọn chế độ camera dựa trên trạng thái useFrontCamera
           />
           <p>{result && result.text}</p>
         </div>
