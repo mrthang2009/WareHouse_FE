@@ -20,7 +20,7 @@ const ScanPage = () => {
       <QrScanner
         onScan={handleScan}
         onError={handleError}
-        style={{ width: "50%"}}
+        style={{ width: "50%", aspectRatio: "1/1" }} // Thiết lập aspect ratio để tạo thành hình vuông
         idealFacingMode={2} // Sử dụng 1 để chọn camera phía sau, 2 để chọn camera phía trước
       />
       <p>{result && result.text}</p>
