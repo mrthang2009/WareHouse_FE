@@ -1,0 +1,30 @@
+.content {
+    display: flex;
+    column-gap: 20px;
+    width: 100%;
+
+    .box_left {
+        width: 50%;
+    }
+
+    .box_right {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .content {
+        display: block;
+
+        .box_left {
+            width: 100%;
+        }
+
+        .box_right {
+            width: 100%;
+        }
+    }
+
+
+
+}
