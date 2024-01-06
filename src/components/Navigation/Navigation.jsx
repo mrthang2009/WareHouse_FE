@@ -41,6 +41,11 @@ const Navigation = ({ role }) => {
         label: "Nhân viên",
         path: "/employees",
       },
+      {
+        key: "7",
+        label: "Quét mã QR",
+        path: "/scans",
+      },
     ];
   } else if (role === "SALES") {
     items = [

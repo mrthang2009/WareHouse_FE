@@ -20,6 +20,7 @@ import ChangePassword from "./pages/ChangePassword";
 import StatisticalPage from "./pages/StatisticalPage";
 import PendingOrderPage from "./pages/PendingOrderPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import ScanPage from "./pages/ScanPage";
 const App = () => {
   // Sử dụng useNavigate để điều hướng trang
   const navigate = useNavigate();
@@ -124,6 +125,7 @@ const App = () => {
                   <Route path="/suppliers" element={<SupplierPage />} />
                   <Route path="/account" element={<AccountPage />} />
                   <Route path="/change-password" element={<ChangePassword />} />
+                  <Route path="/scans" element={<ScanPage/>} />
                 </>
               )}
             {decodedPayloadToken &&
