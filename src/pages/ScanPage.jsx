@@ -20,9 +20,9 @@ const ScanPage = () => {
         onScan={handleScan}
         onError={handleError}
         style={{ width: "500px", height: "500px" }}
-        idealFacingMode={1} // Sử dụng 1 để chọn camera phía sau, 2 để chọn camera phía trước
+        idealFacingMode={2} // Sử dụng 1 để chọn camera phía sau, 2 để chọn camera phía trước
       />
-      <p>Result: {result}</p>
+      <p>Result: {result && result.text}</p>
     </main>
   );
 };
