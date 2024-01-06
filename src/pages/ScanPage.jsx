@@ -20,6 +20,7 @@ const ScanPage = () => {
         onScan={handleScan}
         onError={handleError}
         style={{ width: "100%" }}
+        facingMode="environment" // Chọn camera ở phía sau
       />
       <p>Result: {result}</p>
     </main>
