@@ -352,6 +352,7 @@ const ProductPage = () => {
       <Card>
         <div className={styles.action}>
           <Button
+            className={styles.print}
             onClick={() => handlePrint()}
             icon={<PrinterOutlined />}
             type="primary"
@@ -359,7 +360,6 @@ const ProductPage = () => {
             In Danh Sách
           </Button>
           <Button
-            className={styles.print}
             icon={<PlusOutlined />}
             type="link"
             onClick={() => setAddProductModalVisible(true)}

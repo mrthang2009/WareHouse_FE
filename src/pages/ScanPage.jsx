@@ -20,10 +20,10 @@ const ScanPage = () => {
       <QrScanner
         onScan={handleScan}
         onError={handleError}
-        style={{ width: "300px"}}
+        style={{ width: "50%"}}
         idealFacingMode={2} // Sử dụng 1 để chọn camera phía sau, 2 để chọn camera phía trước
       />
-      <p>Result: {result && result.text}</p>
+      <p>{result && result.text}</p>
     </main>
   );
 };
