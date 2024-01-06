@@ -235,7 +235,7 @@ const ProductPage = () => {
       title: "Mã QR Code",
       width: "1%",
       align: "center",
-      responsive: ["lg"],
+      
       render: function (text, record) {
         return (
           <img
@@ -271,6 +271,7 @@ const ProductPage = () => {
       dataIndex: "price",
       key: "price",
       align: "center",
+      responsive: ["md"],
       render: function (text, record) {
         return (
           <p className={styles.price}>{numeral(record.price).format("0,0$")}</p>
@@ -282,6 +283,7 @@ const ProductPage = () => {
       dataIndex: "discount",
       key: "discount",
       align: "center",
+      responsive: ["md"],
       render: function (text, record) {
         return <p>{`${record.discount}%`}</p>;
       },
