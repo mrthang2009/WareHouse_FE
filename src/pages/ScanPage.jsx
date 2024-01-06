@@ -7,6 +7,7 @@ const ScanPage = () => {
   const handleScan = (data) => {
     if (data) {
       setResult(data);
+      console.log('««««« result »»»»»', result);
     }
   };
 
