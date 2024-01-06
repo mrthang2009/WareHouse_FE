@@ -47,7 +47,7 @@ const ScanPage = () => {
             delay={200}
             onScan={handleScan}
             onError={handleError}
-            style={{ width: "500px" }}
+            style={{ width: "300px" }}
             facingMode="rear" // Mặc định mở camera sau
           />
           <p>{result && result.text}</p>
