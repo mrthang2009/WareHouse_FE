@@ -235,7 +235,7 @@ const ProductPage = () => {
       title: "Mã QR Code",
       width: "1%",
       align: "center",
-      
+
       render: function (text, record) {
         return (
           <img
@@ -343,7 +343,7 @@ const ProductPage = () => {
   };
   const [detailModalOpen, setDetailModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  
+
   const handlePrint = () => {
     generateFilePDF(filterResult.length > 0 ? filterResult : products);
   };
@@ -359,6 +359,7 @@ const ProductPage = () => {
             In Danh Sách
           </Button>
           <Button
+            className={styles.print}
             icon={<PlusOutlined />}
             type="link"
             onClick={() => setAddProductModalVisible(true)}
