@@ -127,7 +127,7 @@ const ScanPage = () => {
             onScan={handleScan}
             onError={handleError}
             style={{ width: "500px" }}
-            facingMode={useFrontCamera ? "user" : "environment"} // Chọn chế độ camera dựa trên trạng thái useFrontCamera
+            facingMode={useFrontCamera ? "front " : "rear"} // Chọn chế độ camera dựa trên trạng thái useFrontCamera
           />
           <p>{result && result.text}</p>
         </div>
