@@ -48,7 +48,6 @@ const ScanPage = () => {
             onScan={handleScan}
             onError={handleError}
             style={{ width: "100%" }}
-            facingMode="environment"
           />
           <p>{result && result.text}</p>
         </div>
