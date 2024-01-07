@@ -49,7 +49,6 @@ const ScanPage = () => {
             onError={handleError}
             style={{ width: "100%" }}
             constraints={{
-              audio: true,
               video: { facingMode: "environment" },
             }}
           />
