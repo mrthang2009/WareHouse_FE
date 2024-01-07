@@ -80,6 +80,7 @@ const ScanPage = () => {
   const [result, setResult] = useState("");
   const [productId, setProductId] = useState(null);
   const [detailProduct, setDetailProduct] = useState(null);
+  const [facingMode, setFacingMode] = useState("environment"); // Mặc định là camera sau
 
   const handleScan = (data) => {
     if (data) {
@@ -91,6 +92,12 @@ const ScanPage = () => {
         console.error("Error decoding QR code data:", error);
       }
     }
+  };
+
+  const switchCamera = () => {
+    setFacingMode((prevFacingMode) =>
+      prevFacingMode === "environment" ? "user" : "environment"
+    );
   };
 
   const handleError = (error) => {
@@ -122,8 +129,9 @@ const ScanPage = () => {
             onScan={handleScan}
             onError={handleError}
             style={{ width: "100%" }}
-            facingMode="environment"
+            facingMode={facingMode}
           />
+          <button onClick={switchCamera}>Chuyển đổi camera</button>
           <p>{result && result.text}</p>
         </div>
 
