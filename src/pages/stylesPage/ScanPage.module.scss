@@ -6,10 +6,19 @@
     .box_left {
         width: 50%;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        .box_camera {
+            width: auto;
+            height: 100%; /* Thiết lập chiều cao để tạo hình vuông */   
+        }
     }
 
     .box_right {
         width: 50%;
+        
     }
 }
 
@@ -19,7 +28,17 @@
 
         .box_left {
             width: 100%;
-        }
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          
+            .box_camera {
+              width: 200px;
+              height: 200px; /* Thiết lập chiều cao để tạo hình vuông */
+              background-color: #ccc; /* Thay thế bằng màu nền mong muốn */
+            }
+          }
 
         .box_right {
             width: 100%;

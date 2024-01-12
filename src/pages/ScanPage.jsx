@@ -10,7 +10,6 @@ const ScanPage = () => {
   const handleScan = (data) => {
     if (data) {
       setResult(data);
-      console.log('««««« data »»»»»', data);
       try {
         const decodedData = JSON.parse(data.text);
         setProductId(decodedData.productId);
@@ -44,15 +43,18 @@ const ScanPage = () => {
     <main className="container">
       <div className={styles.content}>
         <div className={styles.box_left}>
-          <QrScanner
-            delay={200}
-            onScan={handleScan}
-            onError={handleError}
-            style={{ width: "100%" }}
-            constraints={{
-              video: { facingMode: "environment" },
-            }}
-          />
+          <div className={styles.box_camera}>
+            <QrScanner
+              delay={200}
+              onScan={handleScan}
+              onError={handleError}
+              style={{ width: "100%" }}
+              constraints={{
+                video: { facingMode: "environment" },
+              }}
+            />
+          </div>
+
           <p>{result && result.text}</p>
         </div>
 

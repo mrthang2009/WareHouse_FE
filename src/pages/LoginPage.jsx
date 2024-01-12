@@ -77,7 +77,6 @@ const LoginForm = () => {
             label="Email"
             name="email"
             style={{ marginBottom: "15px" }}
-            autoComplete="off" // Tắt gợi ý nhập tự động
             rules={[
               {
                 required: true,
@@ -91,7 +90,6 @@ const LoginForm = () => {
           >
             <Input placeholder="Nhập địa chỉ email của bạn" />
           </Form.Item>
-
           <Form.Item
             label="Mật khẩu"
             name="password"
@@ -107,7 +105,6 @@ const LoginForm = () => {
             <Input.Password placeholder="Nhập mật khẩu của bạn" />
           </Form.Item>
           <a href="/forgot-password">Quên mật khẩu?</a>
-
           <Form.Item
             name="remember"
             style={{ marginBottom: "15px", textAlign: "center" }}
