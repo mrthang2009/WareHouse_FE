@@ -91,9 +91,11 @@ const generateFilePDF = (data) => {
             ${data
               .map((item, index) => {
                 // Tạo mã QR
+                const qrCodeData = JSON.stringify({
+                  productId: item._id,
+                });
                 const qrCode = QRCode(0, "L");
-                const dataToEncode = `productId: ${item._id}`;
-                qrCode.addData(dataToEncode);
+                qrCode.addData(qrCodeData);
                 qrCode.make();
                 const qrDataURL = qrCode.createDataURL();
 
@@ -102,7 +104,7 @@ const generateFilePDF = (data) => {
                       <td>${index + 1}</td>
                       <td>${item.name}</td>
                       <td>
-                        <img src="${qrDataURL}" alt="QR Code">
+                        <img style="width: 60%" src="${qrDataURL}" alt="QR Code">
                         <p>${item.name}</p>
                       </td>
                     </tr>

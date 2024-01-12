@@ -10,6 +10,7 @@ const ScanPage = () => {
   const handleScan = (data) => {
     if (data) {
       setResult(data);
+      console.log('««««« data »»»»»', data);
       try {
         const decodedData = JSON.parse(data.text);
         setProductId(decodedData.productId);

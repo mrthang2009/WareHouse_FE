@@ -39,38 +39,37 @@ const App = () => {
     if (token && !hasDecodedToken) {
       // Giải mã token
       const decodedToken = decodeToken(token);
-  
+
       // Nếu giải mã thành công, cập nhật state và đánh dấu là đã giải mã token
       if (decodedToken) {
         setDecodedPayloadToken(decodedToken);
         setHasDecodedToken(true);
       }
-  
+
       // Kiểm tra xem token đã hết hạn chưa
       if (decodedToken.exp < Date.now() / 1000) {
         // Nếu token hết hạn, kiểm tra xem có refreshToken không
+        localStorage.removeItem("TOKEN");
         if (!refreshToken) {
-          // Nếu không có refreshToken, xóa token và chuyển hướng đến trang đăng nhập
-          localStorage.removeItem("TOKEN");
+          // Nếu không có refreshToken, chuyển hướng đến trang đăng nhập
           navigate("/login");
           return;
         }
-  
         // Giải mã refreshToken
-        const decodedPayloadRefreshToken = decodeToken(refreshToken);
-  
+        const decodedRefreshToken = decodeToken(refreshToken);
+
         // Kiểm tra xem refreshToken có hợp lệ và không hết hạn không
-        if (decodedPayloadRefreshToken.exp >= Date.now() / 1000) {
+        if (decodedRefreshToken.exp >= Date.now() / 1000) {
           try {
             // Gửi request để lấy token mới bằng refreshToken
             const res = await axiosClient.post(`auth/refresh-token`, {
               refreshToken,
             });
-  
+
             // Lấy token mới và lưu vào localStorage
             const newToken = res.data.token;
             localStorage.setItem("TOKEN", newToken);
-  
+
             // Cập nhật header cho axiosClient
             axiosClient.defaults.headers.Authorization = `Bearer ${newToken}`;
           } catch (error) {
@@ -90,7 +89,6 @@ const App = () => {
       }
     }
   };
-  
 
   // Sử dụng useEffect để gọi getDecodedPayload khi component được render
   useEffect(() => {
@@ -144,7 +142,7 @@ const App = () => {
                   <Route path="/suppliers" element={<SupplierPage />} />
                   <Route path="/account" element={<AccountPage />} />
                   <Route path="/change-password" element={<ChangePassword />} />
-                  <Route path="/scans" element={<ScanPage/>} />
+                  <Route path="/scans" element={<ScanPage />} />
                 </>
               )}
             {decodedPayloadToken &&
