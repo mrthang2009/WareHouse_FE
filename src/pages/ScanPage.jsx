@@ -45,6 +45,7 @@ const ScanPage = () => {
         <div className={styles.box_left}>
           <div className={styles.box_camera}>
             <QrScanner
+            className={styles.scanner}
               delay={200}
               onScan={handleScan}
               onError={handleError}

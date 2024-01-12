@@ -4,21 +4,28 @@
     width: 100%;
 
     .box_left {
-        width: 50%;
+        width: 100%;
         text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
+
         .box_camera {
-            width: auto;
-            height: 100%; /* Thiết lập chiều cao để tạo hình vuông */   
+            position: relative;
+            width: 200px;/* Đặt chiều rộng của khung camera */
+            height: 0;
+            padding-bottom: 200px; /* Tạo ra một hình vuông bằng cách đặt tỷ lệ padding-bottom là 100% */
+            overflow: hidden;
+            margin: 0 auto; /* Căn giữa khung camera */
+            .scanner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 
     .box_right {
         width: 50%;
-        
+
     }
 }
 
@@ -28,17 +35,7 @@
 
         .box_left {
             width: 100%;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          
-            .box_camera {
-              width: 200px;
-              height: 200px; /* Thiết lập chiều cao để tạo hình vuông */
-              background-color: #ccc; /* Thay thế bằng màu nền mong muốn */
-            }
-          }
+        }
 
         .box_right {
             width: 100%;
