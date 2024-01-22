@@ -35,6 +35,7 @@ import DetailModal from "../components/DetailProductModal/DetailProductModal";
 const { Option } = Select;
 import numeral from "numeral";
 import "numeral/locales/vi";
+import ExcelReader from "../components/ExcelReader/ExcelReader ";
 numeral.locale("vi");
 const DEFAULT_LIMIT = 18;
 
@@ -351,6 +352,7 @@ const ProductPage = () => {
     <main className="container">
       <Card>
         <div className={styles.action}>
+          <ExcelReader/>
           <Button
             className={styles.print}
             onClick={() => handlePrint()}
